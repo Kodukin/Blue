@@ -1,0 +1,78 @@
+<!-- <p>check-availability2 works!</p> -->
+
+<div class="row">
+
+    <!-- below is form that complete booking of the form -->
+    <form class="form" #bookingForm="ngForm" (ngSubmit)="onBookingFormSubmitted()">
+
+        <div class="check-image-inner-col">
+            <div class="word">
+                Booking Request
+            </div>
+
+            <!-- <img src="images/CheckImage2of2.png" id="checkimage2of2" alt="Placeholder Image"  />  -->
+
+        </div>
+        <img src="images/Check2of2.png" id="image2of2" alt="Placeholder Image" />
+
+        <div class="details">
+
+            <div class="inner-col">
+                <!-- section that takes full client name -->
+                <section class="full-name">
+                    <label for="name">Full Name</label><br>
+                    <input type="text" placeholder="Enter your name" id="name" name="fullName" ngModel #funame="ngModel"
+                        required>
+                    <p *ngIf="funame.invalid && funame.touched">*required</p>
+                </section>
+            </div>
+
+            <div class="inner-col">
+                <section class="address">
+                    <!-- section that takes client physical address details -->
+                    <label for="address">Physical Address</label><br>
+                    <input type="text" placeholder="Enter your address" id="address" name="address" ngModel
+                        #address="ngModel" required>
+                    <p *ngIf="address.invalid && address.touched">*required</p>
+                </section>
+            </div>
+
+            <div class="inner-col">
+                <!-- section that takes client email -->
+                <section class="email">
+                    <label for="email">Email</label><br>
+                    <input type="email" id="email" placeholder="Enter your email" name="email" required ngModel
+                        #email="ngModel">
+                    <p *ngIf="email.invalid && email.touched">*required</p>
+                </section>
+            </div>
+
+            <div class="inner-col">
+                <!-- section that takes full client phonenumber -->
+                <section class="number">
+                    <label for="number">Phone Number</label><br>
+                    <input type="number" id="number" placeholder="Enter your phone number" name="phoneNumber" required
+                        ngModel #phoneNumber="ngModel">
+                    <p *ngIf="phoneNumber.invalid && phoneNumber.touched">*required</p>
+                </section>
+            </div>
+
+            <div class="inner-col">
+                <!-- section that takes remarks from the  client -->
+                <section class="remarks">
+                    <label for="remarkBox">Remarks:</label><br>
+                    <textarea id="remarkBox" placeholder="Please provide your suggestions or opinions to our service"
+                        name="views" ngModel #views="ngModel"></textarea>
+                </section>
+            </div>
+
+            <div class="inner-col">
+                <!-- section that responsible for form submission -->
+                <section class="submit">
+                    <button type="submit" id="submit1" (click)="hideForm()" [disabled]="bookingForm.invalid"
+                        [ngClass]="{'disabled':bookingForm.invalid, 'enabled':bookingForm.valid}">Submit</button>
+                </section>
+            </div>
+        </div>
+    </form>
+</div>

@@ -1,0 +1,158 @@
+<div class="booking-page">
+
+  <div class="row" style="height: 100%;border:none;">
+    <div class="col col-1" id="column1" style="width: 100vw;">
+      <!-- <div class="row" style="margin-top: -70px;padding-left:11%">
+  <div class="word" style="margin-right: 34%;font-size:40px;background-color:;">
+    Check Availability
+  </div>
+  
+  <img src="images/Check1of2.png" id="image1of2" alt="Placeholder Image"  />
+
+</div> -->
+
+      <form *ngIf="showBookingForm" id="checkform" class="booking-content" #checkForm="ngForm" (ngSubmit)="submit()">
+
+        <div class="check-image-inner-col">
+          <div class="word">
+            Check Availability
+          </div>
+
+          <!-- <img src="images/CheckImage1of2.png" id="checkimage1of2" alt="Placeholder Image"  />  -->
+          <img src="images/Check1of2.png" id="image1of2" alt="Placeholder Image" />
+
+        </div>
+
+        <div class="inner-col">
+          <!-- section 2:hall size select field -->
+          <section class="select-hall-size" style="margin-bottom: 20px;">
+            <p>Select hall:</p>
+            <select id="selecthall" name="space" required ngModel #space="ngModel">
+              <option value="" hidden>Select hall here</option>
+              <ng-container *ngFor="let space of bookingSpace">
+                <option [value]="space.name1">{{space.name1}} [ {{space.capacity}} peoples]</option>
+              </ng-container>
+            </select>
+            <div>
+              <small *ngIf=" space.touched&&space.invalid">*required</small>
+            </div>
+          </section>
+        </div>
+        <div class="inner-col">
+          <!-- section 3:check In date field -->
+          <section class="date-from">
+            <p>Check In :</p>
+            <input id="startdate" class="enddate" type="text" #datePicker1 Placeholder="select a date" required
+              name="start" ngModel #start="ngModel" [(ngModel)]="startDate" />
+            <div>
+              <small *ngIf=" start.touched&&start.invalid">*required</small>
+            </div>
+          </section>
+
+        </div>
+        <div class="inner-col">
+
+          <!-- section 4:check out field -->
+          <section class="date-to">
+            <p>Check Out :</p>
+            <input id="enddate" class="enddate" type="text" #datePicker2 Placeholder="select a date" required name="end"
+              ngModel #end="ngModel" [(ngModel)]="endDate" />
+            <div>
+              <small *ngIf=" end.touched&&end.invalid">*required</small>
+            </div>
+          </section>
+
+        </div>
+        <div class="inner-col" style="text-align:end;">
+
+          <section class="check-availabilty">
+            <input type="submit" id="checkbutton" value="Check Availability" [disabled]="checkForm.invalid"
+              [ngClass]="{'disabled':checkForm.invalid, 'enabled':checkForm.valid}">
+          </section>
+
+        </div>
+      </form>
+
+      <!-- section 5:ifa no vailabity response will be shown below -->
+      <section class="booking-message-response" *ngIf="!availabilityStatus">
+        <p>{{ bookingMessage}}</p>
+      </section>
+
+      <div *ngIf="showCheckAvailability3Form">
+
+        <!-- below is the checking availability component which wiil be rendered if there is hall availability for booking completion -->
+        <app-check-availability2 *ngIf="availabilityStatus" (hide)="hideForm($event)" [UsersTime]="UserTime"
+          (loader)="displayLoader($event)"></app-check-availability2>
+
+      </div>
+
+      <!-- below is loader component which will be rendered in some cases -->
+      <app-submit *ngIf="showLoader"></app-submit>
+
+    </div>
+    <div class="col col-2" id="column2">
+
+      <div id="imagecol">
+        <img src="images/IMAGE.png" id="image" alt="Placeholder Image" />
+      </div>
+
+    </div>
+  </div>
+
+  <!-- <div class="row">
+            
+                <form class="booking-content" #checkForm="ngForm" (ngSubmit)="submit()">
+              <div class="row">
+   
+                  <section class="select-hall-size">
+                      <p>Select hall:</p>
+                      <select id="selecthall" name="space" required ngModel #space="ngModel">
+                          <option value =""  hidden>Select hall here</option>
+                          <ng-container *ngFor="let space of bookingSpace">
+                              <option [value]="space.name1">{{space.name1}} [ {{space.capacity}} peoples]</option>
+                          </ng-container>
+                      </select>
+                      <div >
+                          <small *ngIf=" space.touched&&space.invalid" >*required</small>
+                      </div>
+                  </section></div>
+                  <div class="row">
+                   
+                  <section class="date-from">
+                      <p>Check In :</p>
+                      <input id="startdate" class="enddate" type="text" #datePicker1 Placeholder="select a date" required name="start" ngModel #start="ngModel" [(ngModel)]="startDate" />
+                      <div>
+                          <small  *ngIf=" start.touched&&start.invalid">*required</small>
+                      </div>
+                      </section></div>              
+                      
+                  <section class="date-to">
+                      <p>Check Out :</p>
+                      <input id="enddate" class="enddate" type="text" #datePicker2 Placeholder="select a date" required name="end" ngModel #end="ngModel" [(ngModel)]="endDate" />
+                      <div>
+                          <small  *ngIf=" end.touched&&end.invalid">*required</small>
+                      </div>
+                      </section>
+
+                      <div class="row" >
+                        <div class="col" id="checkcol">
+                          
+                          <section class="check-availabilty">
+                            <input type="submit" id="checkbutton" value="CHECK AVAILABILITY" 
+                            [disabled]="checkForm.invalid"
+                            [ngClass]="{'disabled':checkForm.invalid, 'enabled':checkForm.valid}">
+                            </section>
+                        </div>
+                      </div>
+                           
+                  </form>
+
+          </div> -->
+
+</div>
+<!-- <div class="col end" id="column2">
+        <div class="row">
+          <div class="col" >re
+            <img src="images/IMAGE.png" alt="Placeholder Image" style="width: 3362; height: 600px;" />          </div>
+        </div>
+      </div> -->

@@ -1,0 +1,432 @@
+*,
+*:before,
+*:after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    ;
+}
+
+/* .form{
+    width:100%;
+    height:auto;
+    background:transparent;
+    border:2px;
+    border-color: black;
+    border-radius:0  0 5px 5px;
+    padding:0px 0px;
+    padding-left: 10%;
+    background-color: rgb(222, 187, 255);
+    border: size 1px;
+    display:flex;
+    flex-flow:row wrap;
+    align-items:start;
+    justify-content: center;
+    gap:0;
+} */
+
+/* Inner Columns (3, 4, 5) */
+.inner-col {
+    margin-bottom: 1cm;
+    /* Spacing between inner columns */
+    /* border: 1px solid #ccc; */
+    padding-left: 3rem;
+    /* Optional: Padding */
+    /* Optional: Center content */
+    width: 100%;
+    height: auto;
+    /* padding-bottom: 20px; */
+}
+
+.check-image-inner-col {
+    margin-bottom: 0rem;
+    /* Spacing between inner columns */
+    border: 0px solid #ccc;
+    /* Optional: Border for visualization */
+    padding-left: 5rem;
+    /* Optional: Padding */
+    text-align: start;
+    /* Optional: Center content */
+    width: 100%;
+    /* background-color: beige; */
+    height: auto;
+    margin-top: -2.2vw;
+}
+
+.word {
+    margin-right: px;
+    font-size: 3vw;
+    color: blue;
+    margin-bottom: -10%;
+    margin-top: -3vw;
+    padding-bottom: 9%;
+    font-family: Microsoft Uighur;
+    text-align: start;
+}
+
+#image2of2 {
+    width: 14%;
+    margin-top: -200vw;
+    margin-left: 82%;
+    margin-bottom: 30px;
+}
+
+.details {
+    margin: auto;
+    padding-bottom: 10px;
+    width: 90%;
+    height: auto;
+}
+
+.full-name {
+    margin-bottom: 30px;
+    width: 100%;
+    height: 30px;
+    border: 2px;
+}
+
+
+.full-name,
+.address,
+.email,
+.number,
+.submit {
+    width: 100%;
+    height: 30px;
+    /* display:inline-block; */
+    margin-bottom: 20px;
+
+}
+
+/* .address{
+    width:48%;
+    height:auto;
+    display:inline-block;
+    margin-bottom:10px;
+    margin-left:4%;
+} */
+.details1 {
+    margin: auto;
+
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-flow: row nowrap;
+    gap: 0;
+}
+
+/* .details1 .details11{
+    width:48%;
+    height:auto;
+}
+.details1 .remarks{
+    width:48%;
+    height:auto;
+    margin-left:4%;
+}
+.details11 .email,.number{
+    width:48%;
+    height:auto;
+    margin-bottom:10px;
+} */
+
+#remarkBox {
+    width: 100%;
+    height: 95px;
+    padding-bottom: 50px;
+    display: block;
+    border-radius: 3px;
+    outline: none;
+    border: 0.5 solid darkblue;
+    box-shadow: 0px 9px 10px rgba(0, 0, 255, 0.5)
+}
+
+label {
+    width: 100%;
+    height: auto;
+    color: darkblue;
+}
+
+#name.ng-untouched,
+#email.ng-untouched,
+#address.ng-untouched,
+#number.ng-untouched {
+    width: 100%;
+    height: 35px;
+    border: 1px solid gray;
+    border-radius: 5px;
+    outline: none;
+    color: gray;
+    padding: 10px;
+    box-shadow: 0px 9px 10px rgba(0, 0, 255, 0.5)
+}
+
+#name.ng-touched.ng-valid,
+#email.ng-touched.ng-valid,
+#address.ng-touched.ng-valid,
+#number.ng-touched.ng-valid {
+    border: 0.5px solid darkblue;
+    width: 100%;
+    height: 35px;
+    border-radius: 5px;
+    outline: none;
+    color: gray;
+    padding: 10px;
+    outline: none;
+    box-shadow: 0px 9px 10px rgba(0, 0, 255, 0.5)
+}
+
+#name.ng-touched.ng-invalid,
+#email.ng-touched.ng-invalid,
+#number.ng-touched.ng-invalid,
+#address.ng-touched.ng-invalid {
+    border: 0.5px solid red;
+    width: 100%;
+    height: 35px;
+    border-radius: 5px;
+    outline: none;
+    color: gray;
+    padding: 10px;
+    outline: none;
+    box-shadow: 0px 9px 10px rgba(0, 0, 255, 0.5)
+}
+
+.submit {
+    width: 100% ;
+}
+
+.submit label {
+    /* display:block; */
+    color: darkblue;
+    text-align: right;
+}
+
+section p {
+    color: red;
+}
+
+.disabled {
+    color: white;
+    width: auto;
+    padding: 15px;
+    padding-left: 40px;
+    padding-right: 40px;
+
+
+    height: auto;
+    border: none;
+    font-size: 15px;
+
+    background-color: rgb(171, 171, 240);
+}
+
+.enabled {
+    width: auto;
+    height: auto;
+    padding: 15px;
+    border: none;
+    font-size: 15px;
+
+    color: white;
+    background-color: rgb(68, 68, 238);
+    padding-left: 40px;
+    padding-right: 40px;
+}
+
+.enabled:hover {
+    background-color: #4c1fa0;
+}
+
+@media (max-width:768px) {
+    .form {
+        /* width:100vw;
+        height:auto;
+        background:transparent;
+        border:none;
+        border-radius:0  0 5px 5px;
+        padding:10px 0px;
+        color:white;
+    
+        display:flex;
+        flex-flow:column nowrap;
+        align-items:start; */
+        justify-content: center;
+    }
+
+    .check-image-inner-col {
+        margin-bottom: -10vw;
+        /* Spacing between inner columns */
+        border: 0px solid #ccc;
+        /* Optional: Border for visualization */
+        padding-left: 5rem;
+        /* Optional: Padding */
+        padding-right: 2rem;
+        /* Optional: Center content */
+        width: 100%;
+        /* background-color: beige; */
+        height: 3vw;
+    }
+
+    .word {
+        margin-left: -10px;
+        font-size: 6vw;
+        font: bolder;
+        color: blue;
+        margin-bottom: -100px;
+    }
+
+    #image2of2 {
+        width: 8%;
+        margin-left: 87%;
+        margin-top: 6vw;
+        margin-bottom: 0vw;
+    }
+
+    /* .details{
+        margin:auto;
+        padding-bottom:10px;
+        width:90%;
+        height:auto;
+    } */
+
+    .full-name,
+    .number,
+    .address {
+        width: 100%;
+        /* height:auto; */
+        margin-bottom: 20px;
+    }
+
+    #name,
+    #number,
+    #address {
+        width: 100%;
+        height: 30px;
+        border-radius: 5px;
+    }
+
+    /* .address{
+        width:100%;
+        height:auto;
+        margin-bottom:10px;
+         margin-left:0; 
+    } */
+    /* .details1{
+        margin:auto;
+        padding-bottom:10px;
+        width:100%;
+        height:auto;
+        display:flex;
+        flex-flow:column nowrap;
+        gap:0;
+    }
+    .details1 .details11{
+        width:100%;
+        height:auto;
+    }
+    .details1 .remarks{
+        width:100%;
+        height:auto;
+        margin-left:0;
+    }
+    .details11 .email,.number{
+        width:100%;
+        height:auto;
+        margin-bottom:10px;
+    } */
+
+    #remarkBox {
+        width: 100%;
+        height: 95px;
+        padding-left: 2px;
+        padding-right: 2px;
+        padding-top: 3px;
+        padding-bottom: 4px;
+        display: block;
+        border-radius: 3px;
+        outline: none;
+        border: 0.5 solid darkblue;
+        box-shadow: 0px 9px 10px rgba(0, 0, 255, 0.5)
+    }
+
+    label {
+        width: 100%;
+        height: auto;
+        color: darkblue;
+    }
+
+    #name.ng-untouched,
+    #email.ng-untouched,
+    #address.ng-untouched,
+    #number.ng-untouched {
+        width: 100%;
+        height: 100%;
+        border: 1px solid gray;
+        border-radius: 5px;
+        color: gray;
+        padding-left: 10px
+    }
+
+    #name.ng-touched.ng-valid,
+    #email.ng-touched.ng-valid,
+    #address.ng-touched.ng-valid,
+    #number.ng-touched.ng-valid {
+        border: 0.5px solid rgba(0, 0, 139, 1);
+        width: 100%;
+        height: 100%;
+        outline: none;
+        border-radius: 5px;
+        color: gray;
+        padding-left: 10px
+    }
+
+    #name.ng-touched.ng-invalid,
+    #email.ng-touched.ng-invalid,
+    #number.ng-touched.ng-invalid,
+    #address.ng-touched.ng-invalid {
+        border: 0.5px solid red;
+        outline: none;
+        width: 100%;
+        height: 100%;
+        outline: none;
+        border-radius: 5px;
+        color: gray;
+        padding-left: 10px
+    }
+
+    .disabled {
+        color: rgb(255, 255, 255);
+        width: auto;
+        padding: 12px;
+        padding-left: 45px;
+        padding-right: 45px;
+        height: auto;
+        border: none;
+        font-size: 15px;
+        border-radius: 0px;
+        background-color: rgb(171, 171, 240);
+    }
+
+    .enabled {
+        width: auto;
+        height: auto;
+        padding: 15px;
+        padding-right: 45px;
+        padding-left: 45px;
+
+
+
+        border: none;
+        font-size: 13px;
+        border-radius: 0px;
+        color: white;
+        background-color: rgb(68, 68, 238);
+
+        transition: ease-out;
+    }
+
+    .enabled:hover {
+        background-color: #4c1fa0;
+    }
+
+}
