@@ -193,6 +193,9 @@ label {
 
 .submit {
     width: 100% ;
+    display: flex;
+    justify-content: flex-end;
+    height: 50px;
 }
 
 .submit label {
@@ -211,7 +214,8 @@ section p {
     padding: 15px;
     padding-left: 40px;
     padding-right: 40px;
-
+    display: flex;
+    justify-content: flex-end;
 
     height: auto;
     border: none;
