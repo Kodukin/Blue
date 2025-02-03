@@ -17,6 +17,7 @@ import { ElementRef } from '@angular/core';
 import flatpickr from 'flatpickr';
 import { CheckAvailability2Component } from '../check-availability2/check-availability2.component';
 import { CheckAvailability3Component } from '../check-availability3/check-availability3.component';
+import { Location } from '@angular/common';
 
 interface handler {
   status: boolean;
@@ -83,12 +84,38 @@ export class BookNow2Component implements AfterViewInit, OnInit {
   r;
   UserTime: userTime;
   selectedDate: string = 'select date';
+  showSplash = true // control splash screen visibility
+  showCheckAvailability3Form: boolean = false;
+  
+
+
+  // Refresh logic for the specific div
+  refreshSingleDiv() {
+    const targetDiv = document.getElementById('column1');
+    if (targetDiv) {
+      this.ngAfterViewInit()
+         }
+    // Optionally hide the child component after refresh
+    this.showCheckAvailability3Form = false;
+  }
+
+
+  
 
   // showBookingForm: boolean = true; // Controls visibility of the first form
-  showCheckAvailability3Form: boolean = false; // Controls visibility of <app-check-availability3>
+  //showCheckAvailability3Form: boolean = false; // Controls visibility of <app-check-availability3>
   // errorMessage: string | null = null;
 
-  constructor() {}
+  constructor(private location: Location) {}
+
+  // Handles back button to refresh column1 content
+  goBack() {
+    // Set showBookingForm to true and showCheckAvailability3Form to false to simulate refreshing content
+    this.showBookingForm = true;
+    this.showCheckAvailability3Form = false;
+    // Reset any form-related data if needed
+    this.checkForm.reset();
+  }
 
   // initialization of form from the view for data access and validation
   @ViewChild('checkForm') checkForm: NgForm;
@@ -118,7 +145,15 @@ export class BookNow2Component implements AfterViewInit, OnInit {
           console.log(error);
         },
       });
+
+      //Simulate a loading time
+      setTimeout(() => {
+        this.showSplash = false;
+      }, 2000)
   }
+
+
+
 
   //access of input tag that carry flatpckr for configuration
   @ViewChild('datePicker1', { static: false }) datePicker1: ElementRef;
@@ -133,6 +168,12 @@ export class BookNow2Component implements AfterViewInit, OnInit {
       enableTime: false, // Set to true if you need time selection
       minDate: 'today', // Set minimum date for starting date selection
       disableMobile: true,
+onChange: (selectedDate, dateStr) => {
+  this.flapickrInstance2.set('minDate', dateStr);
+}
+
+
+
     });
 
     this.flapickrInstance2 = flatpickr(this.datePicker2.nativeElement, {
@@ -142,7 +183,7 @@ export class BookNow2Component implements AfterViewInit, OnInit {
       disableMobile: true,
     });
 
-    this.showingLoaderToast();
+     this.showingLoaderToast();
   }
 
   // below are manual open of datepicker in mobile version for selection date
@@ -258,7 +299,7 @@ export class BookNow2Component implements AfterViewInit, OnInit {
         }
       }, 2000);
 
-      this.showBookingForm = true;
+      this.showBookingForm = false;
       this.showCheckAvailability3Form = true;
     });
   }
@@ -295,7 +336,7 @@ export class BookNow2Component implements AfterViewInit, OnInit {
     if (msg.includes('invalid')) {
       toast.classList.add('invalid');
     }
-
+    
     setTimeout(() => {
       toast.remove();
     }, 3000);

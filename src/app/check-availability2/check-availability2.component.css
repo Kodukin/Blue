@@ -36,6 +36,9 @@
     width: 100%;
     height: auto;
     /* padding-bottom: 20px; */
+    /* background-color: #ff9900; */
+    
+    
 }
 
 .check-image-inner-col {
@@ -50,41 +53,44 @@
     width: 100%;
     /* background-color: beige; */
     height: auto;
-    margin-top: -2.2vw;
+    margin-top: -2.4vw;
+      /* background-color: #4c1fa0; */
+
 }
 
 .word {
-    margin-right: px;
+    
     font-size: 3vw;
     color: blue;
-    margin-bottom: -10%;
+    margin-bottom: -5vw;
     margin-top: -3vw;
     padding-bottom: 9%;
     font-family: Microsoft Uighur;
-    text-align: start;
+    /* text-align: start; */
 }
 
 #image2of2 {
     width: 14%;
-    margin-top: -200vw;
+    margin-top: -3.7vw;
     margin-left: 82%;
-    margin-bottom: 30px;
+    margin-bottom: 0;
 }
 
 .details {
     margin: auto;
+    margin-top: -0.5vw;
     padding-bottom: 10px;
     width: 90%;
     height: auto;
+    /* background-color: #ff0101; */
 }
 
-.full-name {
+/* .full-name {
     margin-bottom: 30px;
     width: 100%;
     height: 30px;
     border: 2px;
-}
-
+} */
 
 .full-name,
 .address,
@@ -94,8 +100,7 @@
     width: 100%;
     height: 30px;
     /* display:inline-block; */
-    margin-bottom: 20px;
-
+    margin-bottom: 3rem;
 }
 
 /* .address{
@@ -107,7 +112,6 @@
 } */
 .details1 {
     margin: auto;
-
     width: 100%;
     height: auto;
     display: flex;
@@ -133,18 +137,18 @@
 #remarkBox {
     width: 100%;
     height: 95px;
-    padding-bottom: 50px;
+    padding: 0.5rem;
     display: block;
     border-radius: 3px;
     outline: none;
-    border: 0.5 solid darkblue;
+    border: 0px solid darkblue;
     box-shadow: 0px 9px 10px rgba(0, 0, 255, 0.5)
 }
 
 label {
     width: 100%;
     height: auto;
-    color: darkblue;
+    /* color: darkblue; */
 }
 
 #name.ng-untouched,
@@ -153,9 +157,9 @@ label {
 #number.ng-untouched {
     width: 100%;
     height: 35px;
-    border: 1px solid gray;
+    border: 0px solid rgba(0, 0, 255, 0.5);
     border-radius: 5px;
-    outline: none;
+    /* outline: none; */
     color: gray;
     padding: 10px;
     box-shadow: 0px 9px 10px rgba(0, 0, 255, 0.5)
@@ -165,7 +169,7 @@ label {
 #email.ng-touched.ng-valid,
 #address.ng-touched.ng-valid,
 #number.ng-touched.ng-valid {
-    border: 0.5px solid darkblue;
+    border: 0.1px solid rgba(0, 0, 255, 0.5);
     width: 100%;
     height: 35px;
     border-radius: 5px;
@@ -180,7 +184,7 @@ label {
 #email.ng-touched.ng-invalid,
 #number.ng-touched.ng-invalid,
 #address.ng-touched.ng-invalid {
-    border: 0.5px solid red;
+    border: 0px solid rgba(0, 0, 255, 0.5);
     width: 100%;
     height: 35px;
     border-radius: 5px;
@@ -191,15 +195,53 @@ label {
     box-shadow: 0px 9px 10px rgba(0, 0, 255, 0.5)
 }
 
+.submit1{
+    /* background-color: bisque; */
+    display: flex;
+    justify-content: flex-end;
+    text-align: end;
+    width: 60%;
+}
+
+.submit2{
+    /* background-color: #4c1fa0; */
+    display: flex;
+    justify-content: flex-end;
+    width: 40%;
+}
+
 .submit {
     width: 100% ;
+    display: flex;
+    height: 3rem;
+
 }
 
 .submit label {
     /* display:block; */
-    color: darkblue;
+    /* color: darkblue; */
     text-align: right;
 }
+
+#backbutton {
+    color: white;
+    width: auto;
+    padding: 10px;
+    
+
+
+    height: auto;
+    border: none;
+    font-size: 15px;
+
+    background-color: rgb(171, 171, 240);
+    
+}
+
+#backbutton:hover{
+    background-color: tomato;
+}
+
 
 section p {
     color: red;
@@ -209,8 +251,8 @@ section p {
     color: white;
     width: auto;
     padding: 15px;
-    padding-left: 40px;
-    padding-right: 40px;
+    font-family: Itim;
+
 
 
     height: auto;
@@ -226,11 +268,15 @@ section p {
     padding: 15px;
     border: none;
     font-size: 15px;
+    font-family: Itim;
 
     color: white;
     background-color: rgb(68, 68, 238);
-    padding-left: 40px;
-    padding-right: 40px;
+   
+}
+
+.disabled:hover {
+    background-color: #f77700;
 }
 
 .enabled:hover {
@@ -268,7 +314,7 @@ section p {
     }
 
     .word {
-        margin-left: -10px;
+        margin-left: 0;
         font-size: 6vw;
         font: bolder;
         color: blue;
@@ -291,10 +337,11 @@ section p {
 
     .full-name,
     .number,
-    .address {
+    .address,
+    .number {
         width: 100%;
         /* height:auto; */
-        margin-bottom: 20px;
+        margin-bottom: 3rem;
     }
 
     #name,
@@ -338,21 +385,19 @@ section p {
     #remarkBox {
         width: 100%;
         height: 95px;
-        padding-left: 2px;
-        padding-right: 2px;
-        padding-top: 3px;
-        padding-bottom: 4px;
+        padding: 0.5rem;
+
         display: block;
         border-radius: 3px;
         outline: none;
-        border: 0.5 solid darkblue;
+        border: 0px solid darkblue;
         box-shadow: 0px 9px 10px rgba(0, 0, 255, 0.5)
     }
 
     label {
         width: 100%;
         height: auto;
-        color: darkblue;
+        /* color: darkblue; */
     }
 
     #name.ng-untouched,
@@ -361,7 +406,7 @@ section p {
     #number.ng-untouched {
         width: 100%;
         height: 100%;
-        border: 1px solid gray;
+        border: 0px solid rgba(0, 0, 255, 0.5);
         border-radius: 5px;
         color: gray;
         padding-left: 10px
@@ -371,7 +416,7 @@ section p {
     #email.ng-touched.ng-valid,
     #address.ng-touched.ng-valid,
     #number.ng-touched.ng-valid {
-        border: 0.5px solid rgba(0, 0, 139, 1);
+        border: 0.1px solid rgba(0, 0, 255, 0.5);
         width: 100%;
         height: 100%;
         outline: none;
@@ -384,7 +429,7 @@ section p {
     #email.ng-touched.ng-invalid,
     #number.ng-touched.ng-invalid,
     #address.ng-touched.ng-invalid {
-        border: 0.5px solid red;
+        border: 0px solid rgba(0, 0, 255, 0.5);
         outline: none;
         width: 100%;
         height: 100%;
@@ -397,36 +442,37 @@ section p {
     .disabled {
         color: rgb(255, 255, 255);
         width: auto;
-        padding: 12px;
-        padding-left: 45px;
-        padding-right: 45px;
+        padding: 10px;
         height: auto;
         border: none;
         font-size: 15px;
         border-radius: 0px;
         background-color: rgb(171, 171, 240);
+        font-family: Itim;
     }
 
     .enabled {
         width: auto;
         height: auto;
-        padding: 15px;
-        padding-right: 45px;
-        padding-left: 45px;
-
-
-
+        padding: 10px;
         border: none;
         font-size: 13px;
         border-radius: 0px;
         color: white;
         background-color: rgb(68, 68, 238);
+        font-family: Itim;
+
+
 
         transition: ease-out;
     }
 
     .enabled:hover {
         background-color: #4c1fa0;
+    }
+
+    .disabled:hover {
+        background-color: #f77700;
     }
 
 }

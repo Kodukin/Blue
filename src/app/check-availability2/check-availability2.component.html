@@ -1,6 +1,6 @@
 <!-- <p>check-availability2 works!</p> -->
 
-<div class="row">
+<div class="row" *ngIf="showSecondForm">
 
     <!-- below is form that complete booking of the form -->
     <form class="form" #bookingForm="ngForm" (ngSubmit)="onBookingFormSubmitted()">
@@ -69,8 +69,22 @@
             <div class="inner-col">
                 <!-- section that responsible for form submission -->
                 <section class="submit">
-                    <button type="submit" id="submit1" (click)="hideForm()" [disabled]="bookingForm.invalid"
+
+                    <!-- <button class="btn btn-outline-primary" cdkStepperPrevious>
+                        <i class="fa fa-angle-left"></i> back To Information
+                    </button> -->
+
+                    <div class="submit1">
+                        <!-- <button type="button" (click)="onBack()" id="backbutton">Back</button> -->
+
+                    </div>
+                    <div class="submit2">
+                        <button type="submit" id="submit1" (click)="hideForm()" [disabled]="bookingForm.invalid"
                         [ngClass]="{'disabled':bookingForm.invalid, 'enabled':bookingForm.valid}">Submit</button>
+             
+                    </div>
+
+                              
                 </section>
             </div>
         </div>

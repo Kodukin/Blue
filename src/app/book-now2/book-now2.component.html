@@ -1,3 +1,17 @@
+<div id="splash-screen" *ngIf="showSplash">
+  <img src="images/logo2.png" alt="Loading Logo" />
+</div>
+
+<section class="show-error" *ngIf="errorMessage">
+  <div class="error">
+      <p></p>
+  </div>
+</section>
+
+<!-- below is the div for toasting notification according to result from API on final submission --> 
+<div id="toastBox" #toastBox></div>
+
+
 <div class="booking-page">
 
   <div class="row" style="height: 100%;border:none;">
@@ -68,7 +82,11 @@
           <section class="check-availabilty">
             <input type="submit" id="checkbutton" value="Check Availability" [disabled]="checkForm.invalid"
               [ngClass]="{'disabled':checkForm.invalid, 'enabled':checkForm.valid}">
+
+              
           </section>
+
+          
 
         </div>
       </form>
@@ -81,8 +99,13 @@
       <div *ngIf="showCheckAvailability3Form">
 
         <!-- below is the checking availability component which wiil be rendered if there is hall availability for booking completion -->
-        <app-check-availability2 *ngIf="availabilityStatus" (hide)="hideForm($event)" [UsersTime]="UserTime"
-          (loader)="displayLoader($event)"></app-check-availability2>
+      <app-check-availability2 *ngIf="availabilityStatus" 
+        (hide)="hideForm($event)" 
+        [UsersTime]="UserTime" 
+        (loader)="displayLoader($event)" 
+        (refreshDiv)="refreshSingleDiv()"
+        >
+      </app-check-availability2>
 
       </div>
 
@@ -92,9 +115,23 @@
     </div>
     <div class="col col-2" id="column2">
 
-      <div id="imagecol">
+      
         <img src="images/IMAGE.png" id="image" alt="Placeholder Image" />
-      </div>
+      
+
+
+
+
+
+<!-- section 5:ifa no vailabity response will be shown below -->
+<section class="booking-message-response" *ngIf="!availabilityStatus">
+  <p>{{ bookingMessage}}</p>
+</section>
+
+      
+
+
+
 
     </div>
   </div>
